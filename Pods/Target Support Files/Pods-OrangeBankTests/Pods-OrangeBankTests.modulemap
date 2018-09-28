@@ -1,0 +1,6 @@
+framework module Pods_OrangeBankTests {
+  umbrella header "Pods-OrangeBankTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
