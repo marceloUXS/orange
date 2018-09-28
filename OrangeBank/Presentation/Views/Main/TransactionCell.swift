@@ -29,7 +29,7 @@ class TransactionCell: UITableViewCell, TransactionCellType {
     
     var date: Date? = nil {
         didSet {
-            dateLabel.text = date?.description
+            dateLabel.text = date?.toString(style: .long)
         }
     }
     
