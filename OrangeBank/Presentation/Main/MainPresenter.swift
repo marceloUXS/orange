@@ -6,7 +6,7 @@
 //  Copyright © 2018 Marcelo. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol MainView: class {
     func reloadData()
@@ -15,6 +15,9 @@ protocol MainView: class {
 protocol MainPresenter: PresenterBase {
     var paymentGateway: APIGateway { get }
     var transactions: [Transaction]? { get }
+    
+    func numberOfRows() -> Int
+    func configureItem(_ cell: UITableViewCell, at indexPath: IndexPath)
 }
 
 class MainPresenterDefault: MainPresenter {
@@ -43,17 +46,83 @@ class MainPresenterDefault: MainPresenter {
     
     // MARK: - MainPresenter
     
+    func numberOfRows() -> Int {
+        return transactions?.count ?? 0
+    }
+    
+    func configureItem(_ cell: UITableViewCell, at indexPath: IndexPath) {
+        guard let transactions = transactions else {
+            return
+        }
+        
+        let item = transactions[indexPath.row]
+        
+        if let cell = cell as? TransactionCellType {
+            let amount = getTotalAmount(amount: item.amount, fee: item.fee)
+            
+            cell.amount = amount
+            cell.date = item.date
+            cell.transactionDescription = getDescription(description: item.description)
+            cell.isIncome = isIncome(amount: amount)
+        }
+        
+    }
+    
     // MARK: - Private
+    
+    private func getDescription(description: String?) -> String? {
+        guard let description = description, description != "" else {
+            return "Transacción"
+        }
+        
+        return description
+    }
+    
+    private func getTotalAmount(amount: Double?, fee: Double?) -> Double? {
+        guard let amount = amount else {
+            return nil
+        }
+        
+        if let fee = fee {
+            return amount + fee
+        }
+        
+        return amount
+    }
+    
+    private func isIncome(amount: Double?) -> Bool {
+        guard let amount = amount else {
+            return true
+        }
+        
+        if amount < 0.0 {
+            return false
+        }
+        
+        return true
+    }
     
     private func loadTransactions() {
         paymentGateway.getTransactions { (result, error) in
             guard let transactions = result as? [Transaction] else {
                 return
             }
-            
-            self.transactions = transactions
-            self.view?.reloadData()
+
+            self.sortTransactions(transactions)
         }
+    }
+    
+    private func sortTransactions(_ transactions: [Transaction]) {
+        var transactions = transactions
+
+        transactions = transactions.filter { $0.date != nil }
+ 
+        transactions = transactions.sorted(by: {
+            $0.date?.compare($1.date ?? Date()) == .orderedDescending
+        })
+        
+        self.transactions = transactions
+        self.view?.reloadData()
     }
     
 }

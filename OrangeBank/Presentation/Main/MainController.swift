@@ -10,6 +10,9 @@ import UIKit
 
 class MainController: UIViewController {
     
+    @IBOutlet weak var transactionLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    
     var presenter: PresenterBase?
     
     private var mainPresenter: MainPresenter {
@@ -27,23 +30,46 @@ class MainController: UIViewController {
         
         presenter = MainPresenterDefault(view: self)
         mainPresenter.viewDidLoad()
+        setup()
     }
     
     // MARK: - Private
     
     private func setup() {
-        
+        tableView.register(UINib(nibName: "TransactionCell", bundle: nil), forCellReuseIdentifier: "TransactionCell")
     }
     
 }
 
+// MARK: - TableViewDelegate and TableViewDataSource
+
+extension MainController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return mainPresenter.numberOfRows()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionCell") else {
+            fatalError("TransactionCell - Wrong ID or cell configuration!")
+        }
+        
+        mainPresenter.configureItem(cell, at: indexPath)
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90.0
+    }
+}
 
 // MARK: - MainView
 
 extension MainController: MainView {
     
     func reloadData() {
-        
+        tableView.reloadData()
     }
     
 }

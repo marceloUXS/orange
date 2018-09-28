@@ -33,7 +33,7 @@ class Transaction {
         
         let dateString = try container.decodeIfPresent(String.self, forKey: .date)
         let formatter = DateFormatter.iso8601Full
-        self.date = formatter.date(from: dateString ?? "") ?? Date()
+        self.date = formatter.date(from: dateString ?? "")
     }
     
 
