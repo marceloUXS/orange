@@ -10,11 +10,13 @@ import UIKit
 
 protocol MainView: class {
     func reloadData()
+    func setLastTransaction()
 }
 
 protocol MainPresenter: PresenterBase {
     var paymentGateway: APIGateway { get }
     var transactions: [Transaction]? { get }
+    var lastTransaction: Transaction? { get }
     
     func numberOfRows() -> Int
     func configureItem(_ cell: UITableViewCell, at indexPath: IndexPath)
@@ -25,6 +27,8 @@ class MainPresenterDefault: MainPresenter {
     var paymentGateway: APIGateway = APIGateway()
     
     var transactions: [Transaction]?
+    
+    var lastTransaction: Transaction?
     
     private weak var view: MainView?
     
@@ -121,7 +125,11 @@ class MainPresenterDefault: MainPresenter {
             $0.date?.compare($1.date ?? Date()) == .orderedDescending
         })
         
+        lastTransaction = transactions.first
+        transactions.removeFirst()
+        
         self.transactions = transactions
+        self.view?.setLastTransaction()
         self.view?.reloadData()
     }
     

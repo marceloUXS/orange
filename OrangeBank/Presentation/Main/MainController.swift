@@ -10,7 +10,9 @@ import UIKit
 
 class MainController: UIViewController {
     
-    @IBOutlet weak var transactionLabel: UILabel!
+    @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var transactionContainer: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loader: UIActivityIndicatorView!
     
@@ -37,6 +39,7 @@ class MainController: UIViewController {
     // MARK: - Private
     
     private func setup() {
+        transactionContainer.isHidden = true
         tableView.register(UINib(nibName: "TransactionCell", bundle: nil), forCellReuseIdentifier: "TransactionCell")
     }
     
@@ -74,5 +77,10 @@ extension MainController: MainView {
         tableView.reloadData()
     }
     
+    func setLastTransaction() {
+        transactionContainer.isHidden = false
+        descriptionLabel.text = mainPresenter.lastTransaction?.description
+        amountLabel.text = mainPresenter.lastTransaction?.amount?.description
+    }
 }
 
