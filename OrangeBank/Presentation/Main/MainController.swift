@@ -25,7 +25,7 @@ class MainController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter = MainPresenterDefault()
+        presenter = MainPresenterDefault(view: self)
         mainPresenter.viewDidLoad()
     }
     
@@ -41,6 +41,10 @@ class MainController: UIViewController {
 // MARK: - MainView
 
 extension MainController: MainView {
+    
+    func reloadData() {
+        
+    }
     
 }
 
