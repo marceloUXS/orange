@@ -12,6 +12,7 @@ class MainController: UIViewController {
     
     @IBOutlet weak var transactionLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var loader: UIActivityIndicatorView!
     
     var presenter: PresenterBase?
     
@@ -69,6 +70,7 @@ extension MainController: UITableViewDelegate, UITableViewDataSource {
 extension MainController: MainView {
     
     func reloadData() {
+        loader.stopAnimating()
         tableView.reloadData()
     }
     
