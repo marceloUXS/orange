@@ -13,7 +13,6 @@
 		9C857F69215E3288005A6947 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C857F67215E3288005A6947 /* Main.storyboard */; };
 		9C857F6B215E328B005A6947 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C857F6A215E328B005A6947 /* Assets.xcassets */; };
 		9C857F6E215E328B005A6947 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C857F6C215E328B005A6947 /* LaunchScreen.storyboard */; };
-		9C857F79215E328B005A6947 /* OrangeBankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C857F78215E328B005A6947 /* OrangeBankTests.swift */; };
 		9C857F84215E328B005A6947 /* OrangeBankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C857F83215E328B005A6947 /* OrangeBankUITests.swift */; };
 		9C857F97215E340B005A6947 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C857F96215E340B005A6947 /* MainPresenter.swift */; };
 		9C857FA0215E3607005A6947 /* PresenterBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C857F9F215E3607005A6947 /* PresenterBase.swift */; };
@@ -23,6 +22,8 @@
 		9C857FAB215E477B005A6947 /* APIGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C857FAA215E477B005A6947 /* APIGateway.swift */; };
 		9C857FB2215E5269005A6947 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C857FB0215E5269005A6947 /* TransactionCell.swift */; };
 		9C857FB3215E5269005A6947 /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C857FB1215E5269005A6947 /* TransactionCell.xib */; };
+		9C857FBB21610D3F005A6947 /* APIGatewayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C857FBA21610D3F005A6947 /* APIGatewayTests.swift */; };
+		9C857FBD216113DC005A6947 /* MainPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C857FBC216113DC005A6947 /* MainPresenterTests.swift */; };
 		F176B072571F842198FA05AA /* Pods_OrangeBankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F4EB7E3B25AB3D92081F21B /* Pods_OrangeBankUITests.framework */; };
 		FA1AB207FF24FE167BB98449 /* Pods_OrangeBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D20945F735177682A006F15 /* Pods_OrangeBankTests.framework */; };
 /* End PBXBuildFile section */
@@ -58,7 +59,6 @@
 		9C857F6D215E328B005A6947 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C857F6F215E328B005A6947 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C857F74215E328B005A6947 /* OrangeBankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrangeBankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C857F78215E328B005A6947 /* OrangeBankTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeBankTests.swift; sourceTree = "<group>"; };
 		9C857F7A215E328B005A6947 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C857F7F215E328B005A6947 /* OrangeBankUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrangeBankUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C857F83215E328B005A6947 /* OrangeBankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeBankUITests.swift; sourceTree = "<group>"; };
@@ -71,6 +71,8 @@
 		9C857FAA215E477B005A6947 /* APIGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIGateway.swift; sourceTree = "<group>"; };
 		9C857FB0215E5269005A6947 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		9C857FB1215E5269005A6947 /* TransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionCell.xib; sourceTree = "<group>"; };
+		9C857FBA21610D3F005A6947 /* APIGatewayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIGatewayTests.swift; sourceTree = "<group>"; };
+		9C857FBC216113DC005A6947 /* MainPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterTests.swift; sourceTree = "<group>"; };
 		9F4EB7E3B25AB3D92081F21B /* Pods_OrangeBankUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrangeBankUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A47E7299C41426882A718618 /* Pods-OrangeBankTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrangeBankTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OrangeBankTests/Pods-OrangeBankTests.release.xcconfig"; sourceTree = "<group>"; };
 		CA951A5EB5638640BFBE9586 /* Pods-OrangeBankUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrangeBankUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OrangeBankUITests/Pods-OrangeBankUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,7 +167,8 @@
 		9C857F77215E328B005A6947 /* OrangeBankTests */ = {
 			isa = PBXGroup;
 			children = (
-				9C857F78215E328B005A6947 /* OrangeBankTests.swift */,
+				9C857FBA21610D3F005A6947 /* APIGatewayTests.swift */,
+				9C857FBC216113DC005A6947 /* MainPresenterTests.swift */,
 				9C857F7A215E328B005A6947 /* Info.plist */,
 			);
 			path = OrangeBankTests;
@@ -222,7 +225,6 @@
 			isa = PBXGroup;
 			children = (
 				9C857F9B215E344C005A6947 /* API */,
-				9C857F9D215E3458005A6947 /* Controller */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -243,13 +245,6 @@
 				9C857FA1215E388D005A6947 /* Transaction.swift */,
 			);
 			path = Entities;
-			sourceTree = "<group>";
-		};
-		9C857F9D215E3458005A6947 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		9C857F9E215E35F5005A6947 /* Base */ = {
@@ -548,7 +543,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C857F79215E328B005A6947 /* OrangeBankTests.swift in Sources */,
+				9C857FBB21610D3F005A6947 /* APIGatewayTests.swift in Sources */,
+				9C857FBD216113DC005A6947 /* MainPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

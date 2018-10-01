@@ -1,15 +1,15 @@
 //
-//  OrangeBankTests.swift
+//  MainPresenterTests.swift
 //  OrangeBankTests
 //
-//  Created by Marcelo on 28/9/18.
+//  Created by Marcelo on 30/9/18.
 //  Copyright © 2018 Marcelo. All rights reserved.
 //
 
 import XCTest
 @testable import OrangeBank
 
-class OrangeBankTests: XCTestCase {
+class MainPresenterTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
