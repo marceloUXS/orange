@@ -77,10 +77,10 @@ extension MainController: MainView {
         tableView.reloadData()
     }
     
-    func setLastTransaction() {
+    func setLastTransaction(amount: Double?) {
         transactionContainer.isHidden = false
         descriptionLabel.text = mainPresenter.lastTransaction?.description
-        amountLabel.text = mainPresenter.lastTransaction?.amount?.description
+        amountLabel.text = amount?.description
     }
 }
 

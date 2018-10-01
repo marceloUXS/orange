@@ -10,7 +10,7 @@ import UIKit
 
 protocol MainView: class {
     func reloadData()
-    func setLastTransaction()
+    func setLastTransaction(amount: Double?)
 }
 
 protocol MainPresenter: PresenterBase {
@@ -129,7 +129,7 @@ class MainPresenterDefault: MainPresenter {
         transactions.removeFirst()
         
         self.transactions = transactions
-        self.view?.setLastTransaction()
+        self.view?.setLastTransaction(amount: getTotalAmount(amount: lastTransaction?.amount, fee: lastTransaction?.fee))
         self.view?.reloadData()
     }
     
